@@ -17,6 +17,7 @@ namespace Domain.Spec
 
             order.Customer.Should().Be(customer);
             order.CustomerId.Should().Be(customer.Id);
+            order.HasCustomer.Should().BeTrue();
         }
 
         [Fact]
@@ -30,6 +31,7 @@ namespace Domain.Spec
 
             order.Customer.Should().BeNull();
             order.CustomerId.Should().BeNull();
+            order.HasCustomer.Should().BeFalse();
         }
     }
 }
