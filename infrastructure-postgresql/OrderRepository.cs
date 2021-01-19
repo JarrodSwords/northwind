@@ -15,7 +15,8 @@ namespace Northwind.Infrastructure.PostgreSql
         public Domain.Order Find(int id)
         {
             var order = _unitOfWork.Connection.Get<Order>(id);
-            return order.ToDomain();
+            order.Customer = _unitOfWork.Connection.Get<Customer>(order.customer_id);
+            return order.CreateOrder();
         }
     }
 }

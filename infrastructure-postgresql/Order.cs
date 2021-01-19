@@ -1,5 +1,6 @@
 ﻿using System;
 using Dapper.Contrib.Extensions;
+using Northwind.Domain;
 
 namespace Northwind.Infrastructure.PostgreSql
 {
@@ -19,10 +20,11 @@ namespace Northwind.Infrastructure.PostgreSql
         public string ship_region { get; set; }
         public string ship_postal_code { get; set; }
         public string ship_country { get; set; }
+        public Customer Customer { get; set; }
 
-        public Domain.Order ToDomain()
+        public Domain.Order CreateOrder()
         {
-            return new (
+            return new(
                 order_id,
                 customer_id,
                 employee_id,
@@ -31,14 +33,15 @@ namespace Northwind.Infrastructure.PostgreSql
                 shipped_date,
                 ship_via,
                 freight,
-                new Domain.Address(
-                    ship_name,
-                    ship_address,
-                    ship_city,
-                    ship_region,
-                    ship_postal_code,
-                    ship_country)
+                ship_name,
+                CreateAddress(),
+                Customer.CreateCustomer()
             );
+        }
+
+        private Address CreateAddress()
+        {
+            return new(ship_address, ship_city, ship_region, ship_postal_code, ship_country);
         }
     }
 }

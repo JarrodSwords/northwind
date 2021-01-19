@@ -13,7 +13,9 @@ namespace Northwind.Domain
             DateTime shippedDate,
             int shipVia,
             float freight,
-            Address address
+            string shipName,
+            Address address,
+            Customer customer
         )
         {
             Id = id;
@@ -24,7 +26,9 @@ namespace Northwind.Domain
             ShippedDate = shippedDate;
             ShipVia = shipVia;
             Freight = freight;
+            ShipName = shipName;
             Address = address;
+            Customer = customer;
         }
 
         public int Id { get; set; }
@@ -35,6 +39,8 @@ namespace Northwind.Domain
         public DateTime ShippedDate { get; set; }
         public int ShipVia { get; set; }
         public float Freight { get; set; }
+        public string ShipName { get; set; }
         public Address Address { get; set; }
+        public Customer Customer { get; set; }
     }
 }

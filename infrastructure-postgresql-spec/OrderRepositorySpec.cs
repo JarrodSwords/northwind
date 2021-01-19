@@ -18,6 +18,7 @@ namespace Infrastructure.PostgreSql.Spec
             var order = orderRepository.Find(10248);
 
             order.Should().NotBeNull();
+            order.Customer.Should().NotBeNull();
         }
     }
 }
