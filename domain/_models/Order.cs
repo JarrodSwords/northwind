@@ -6,7 +6,6 @@ namespace Northwind.Domain
     {
         public Order(
             int id,
-            string customerId,
             int employeeId,
             DateTime orderDate,
             DateTime requiredDate,
@@ -19,7 +18,6 @@ namespace Northwind.Domain
         )
         {
             Id = id;
-            CustomerId = customerId;
             EmployeeId = employeeId;
             OrderDate = orderDate;
             RequiredDate = requiredDate;
@@ -32,7 +30,6 @@ namespace Northwind.Domain
         }
 
         public int Id { get; set; }
-        public string CustomerId { get; set; }
         public int EmployeeId { get; set; }
         public DateTime OrderDate { get; set; }
         public DateTime RequiredDate { get; set; }
@@ -41,6 +38,22 @@ namespace Northwind.Domain
         public float Freight { get; set; }
         public string ShipName { get; set; }
         public Address Address { get; set; }
-        public Customer Customer { get; set; }
+
+        public Customer Customer { get; private set; }
+        public string CustomerId => Customer?.Id;
+        public bool HasCustomer => Customer != null;
+
+        public void Assign(Customer customer)
+        {
+            Customer = customer;
+        }
+
+        public void RemoveCustomer(string customerId)
+        {
+            if (customerId != CustomerId)
+                return;
+
+            Customer = null;
+        }
     }
 }

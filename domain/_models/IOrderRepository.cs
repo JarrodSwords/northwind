@@ -3,5 +3,6 @@
     public interface IOrderRepository
     {
         Order Find(int id);
+        void Update(Order order);
     }
 }
