@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "domain\Domain.csproj", "{F9AED6B2-E81D-496F-9A49-6B149D38688B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "domain\Domain.csproj", "{F9AED6B2-E81D-496F-9A49-6B149D38688B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.PostgreSql", "infrastructure-postgresql\Infrastructure.PostgreSql.csproj", "{896631DA-B0D9-4661-8EF3-FD235DC23265}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.PostgreSql", "infrastructure-postgresql\Infrastructure.PostgreSql.csproj", "{896631DA-B0D9-4661-8EF3-FD235DC23265}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Spec", "domain-spec\Domain.Spec.csproj", "{D2CC0C1D-E2D6-4B7C-9AB6-FE238557E211}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.Spec", "domain-spec\Domain.Spec.csproj", "{D2CC0C1D-E2D6-4B7C-9AB6-FE238557E211}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.PostgreSql.Spec", "infrastructure-postgresql-spec\Infrastructure.PostgreSql.Spec.csproj", "{13118890-EFF8-48C6-BE3F-33435BD2B584}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,9 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{F9AED6B2-E81D-496F-9A49-6B149D38688B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -58,5 +57,23 @@ Global
 		{D2CC0C1D-E2D6-4B7C-9AB6-FE238557E211}.Release|x64.Build.0 = Release|Any CPU
 		{D2CC0C1D-E2D6-4B7C-9AB6-FE238557E211}.Release|x86.ActiveCfg = Release|Any CPU
 		{D2CC0C1D-E2D6-4B7C-9AB6-FE238557E211}.Release|x86.Build.0 = Release|Any CPU
+		{13118890-EFF8-48C6-BE3F-33435BD2B584}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13118890-EFF8-48C6-BE3F-33435BD2B584}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13118890-EFF8-48C6-BE3F-33435BD2B584}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{13118890-EFF8-48C6-BE3F-33435BD2B584}.Debug|x64.Build.0 = Debug|Any CPU
+		{13118890-EFF8-48C6-BE3F-33435BD2B584}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{13118890-EFF8-48C6-BE3F-33435BD2B584}.Debug|x86.Build.0 = Debug|Any CPU
+		{13118890-EFF8-48C6-BE3F-33435BD2B584}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13118890-EFF8-48C6-BE3F-33435BD2B584}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13118890-EFF8-48C6-BE3F-33435BD2B584}.Release|x64.ActiveCfg = Release|Any CPU
+		{13118890-EFF8-48C6-BE3F-33435BD2B584}.Release|x64.Build.0 = Release|Any CPU
+		{13118890-EFF8-48C6-BE3F-33435BD2B584}.Release|x86.ActiveCfg = Release|Any CPU
+		{13118890-EFF8-48C6-BE3F-33435BD2B584}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6D7FB9E2-CF14-4E5B-A215-DDA1B90EDE15}
 	EndGlobalSection
 EndGlobal
