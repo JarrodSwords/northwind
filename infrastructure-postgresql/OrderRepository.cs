@@ -1,25 +1,20 @@
 ﻿using Dapper.Contrib.Extensions;
 using Northwind.Domain;
-using Npgsql;
 
 namespace Northwind.Infrastructure.PostgreSql
 {
     public class OrderRepository : IOrderRepository
     {
-        private readonly NpgsqlConnection _connection;
-        private const string ConnectionString =
-            "Server=localhost;Port=5432;Database=northwind;User Id=postgres;Password=postgres";
+        private readonly UnitOfWork _unitOfWork;
 
-        public OrderRepository(NpgsqlConnection connection)
+        public OrderRepository(UnitOfWork unitOfWork)
         {
-            _connection = connection;
+            _unitOfWork = unitOfWork;
         }
 
         public Domain.Order Find(int id)
         {
-            using var connection = new NpgsqlConnection(ConnectionString);
-            var order = connection.Get<Order>(id);
-
+            var order = _unitOfWork.Connection.Get<Order>(id);
             return order.ToDomain();
         }
     }
