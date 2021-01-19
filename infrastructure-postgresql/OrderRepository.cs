@@ -6,11 +6,16 @@ namespace Northwind.Infrastructure.PostgreSql
 {
     public class OrderRepository : IOrderRepository
     {
+        private readonly NpgsqlConnection _connection;
+
+        public OrderRepository(NpgsqlConnection connection)
+        {
+            _connection = connection;
+        }
+
         public Domain.Order Find(int id)
         {
-            using var connection = new NpgsqlConnection();
-
-            var record = connection.Get<Order>(id);
+            var record = _connection.Get<Order>(id);
 
             var order = new Domain.Order(
                 record.order_id,
@@ -28,7 +33,7 @@ namespace Northwind.Infrastructure.PostgreSql
                     record.ship_region,
                     record.ship_postal_code,
                     record.ship_country)
-                );
+            );
 
             return order;
         }
