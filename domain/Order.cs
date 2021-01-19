@@ -13,7 +13,8 @@ namespace Northwind.Domain
             DateTime shippedDate,
             int shipVia,
             float freight,
-            Address address)
+            Address address
+        )
         {
             Id = id;
             CustomerId = customerId;
