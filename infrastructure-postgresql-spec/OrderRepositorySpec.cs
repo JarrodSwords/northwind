@@ -1,5 +1,4 @@
 using FluentAssertions;
-using Northwind.Domain;
 using Northwind.Infrastructure.PostgreSql;
 using Xunit;
 

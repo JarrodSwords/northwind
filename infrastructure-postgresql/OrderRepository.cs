@@ -1,5 +1,4 @@
-﻿using System;
-using Dapper.Contrib.Extensions;
+﻿using Dapper.Contrib.Extensions;
 using Northwind.Domain;
 
 namespace Northwind.Infrastructure.PostgreSql
