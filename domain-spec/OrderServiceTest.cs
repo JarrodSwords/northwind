@@ -1,5 +1,3 @@
-using System.Diagnostics;
-using System.Runtime.Versioning;
 using FluentAssertions;
 using Northwind.Domain;
 using Northwind.Infrastructure.PostgreSql;
