@@ -21,7 +21,7 @@ namespace Domain.Spec
         }
 
         [Fact]
-        public void WhenRemovingCustomer_CustomerIsNull()
+        public void WhenRemovingCustomer()
         {
             var order = ObjectProvider.GetOrder();
             var customer = ObjectProvider.GetCustomer();
