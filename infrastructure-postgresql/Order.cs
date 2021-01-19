@@ -1,5 +1,5 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
+using Dapper.Contrib.Extensions;
 
 namespace Northwind.Infrastructure.PostgreSql
 {
