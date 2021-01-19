@@ -1,3 +1,4 @@
+using System.Data;
 using FluentAssertions;
 using Northwind.Domain;
 using Northwind.Infrastructure.PostgreSql;
@@ -5,7 +6,7 @@ using Xunit;
 
 namespace Domain.Spec
 {
-    public class OrderServiceTest
+    public class OrderServiceSpec
     {
         private const string ConnectionString =
             "Server=localhost;Port=5432;Database=northwind;User Id=postgres;Password=postgres";
